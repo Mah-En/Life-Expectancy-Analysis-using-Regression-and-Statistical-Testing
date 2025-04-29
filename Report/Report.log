@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  30 APR 2025 01:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  30 APR 2025 01:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -326,7 +326,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box56
 )
-No file Report.aux.
+(./Report.aux)
 \openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -347,6 +347,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -407,83 +408,81 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 14.
+
+(./Report.out) (./Report.out)
 \@outlinefile=\write3
 \openout3 = `Report.out'.
 
-<output.png, id=4, 1716.4125pt x 698.8509pt>
-File: output.png Graphic file (type png)
-<use output.png>
-Package pdftex.def Info: output.png  used on input line 40.
-(pdftex.def)             Requested size: 452.9679pt x 184.42682pt.
 
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<output2.png, id=21, 732.8178pt x 395.3169pt>
+<output.png, id=99, 1716.4125pt x 698.8509pt>
+File: output.png Graphic file (type png)
+<use output.png>
+Package pdftex.def Info: output.png  used on input line 49.
+(pdftex.def)             Requested size: 452.9679pt x 184.42682pt.
+<output2.png, id=101, 732.8178pt x 395.3169pt>
 File: output2.png Graphic file (type png)
 <use output2.png>
-Package pdftex.def Info: output2.png  used on input line 51.
+Package pdftex.def Info: output2.png  used on input line 57.
 (pdftex.def)             Requested size: 385.02547pt x 207.70131pt.
-<output3.png, id=22, 607.7907pt x 395.3169pt>
+<output3.png, id=102, 607.7907pt x 395.3169pt>
 File: output3.png Graphic file (type png)
 <use output3.png>
-Package pdftex.def Info: output3.png  used on input line 62.
+Package pdftex.def Info: output3.png  used on input line 65.
 (pdftex.def)             Requested size: 317.07614pt x 206.22948pt.
 
 
 [2 <./output.png> <./output2.png>]
 
 [3 <./output3.png>]
-<output4.png, id=46, 607.7907pt x 395.3169pt>
+<output4.png, id=120, 607.7907pt x 395.3169pt>
 File: output4.png Graphic file (type png)
 <use output4.png>
 Package pdftex.def Info: output4.png  used on input line 114.
 (pdftex.def)             Requested size: 317.07614pt x 206.22948pt.
-<output5.png, id=47, 607.7907pt x 395.3169pt>
+<output5.png, id=121, 607.7907pt x 395.3169pt>
 File: output5.png Graphic file (type png)
 <use output5.png>
-Package pdftex.def Info: output5.png  used on input line 121.
+Package pdftex.def Info: output5.png  used on input line 122.
 (pdftex.def)             Requested size: 317.07614pt x 206.22948pt.
 
 
 [4 <./output4.png>]
 
-[5 <./output5.png>] (./Report.aux)
+[5 <./output5.png>]
+
+[6] (./Report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D01619772928E2A6B74668E1F8845735;3981.
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: C74CA88F5734DBFF8E222163C1E3BDD1;4144.
  ) 
 Here is how much of TeX's memory you used:
- 11126 strings out of 473190
- 176384 string characters out of 5715801
- 582827 words of memory out of 5000000
- 34244 multiletter control sequences out of 15000+600000
- 565722 words of font info for 60 fonts, out of 8000000 for 9000
+ 11162 strings out of 473190
+ 176861 string characters out of 5715801
+ 584805 words of memory out of 5000000
+ 34269 multiletter control sequences out of 15000+600000
+ 566068 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,486b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,612b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Report.pdf (5 pages, 328091 bytes).
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/l
+ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Report.pdf (6 pages, 342888 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 33 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 

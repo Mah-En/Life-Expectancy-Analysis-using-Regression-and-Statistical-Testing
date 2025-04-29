@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+
+\title{\textbf{Life Expectancy Analysis Using Regression and Statistical Testing}}
+\author{Machine Learning}
+\date{Winter 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+This study analyzes life expectancy data provided by the World Health Organization (WHO) to understand the impact of socioeconomic and health indicators on life expectancy. We perform data preprocessing, statistical hypothesis testing, correlation analysis, and regression modeling to explore insights into country-level life expectancy outcomes. The analysis includes both models with and without country-specific information. The study concludes with insights into predictive modeling strategies for public health forecasting and discusses implications for global health policy.
+
+\section{Introduction}
+Life expectancy is a fundamental metric used to measure the health and well-being of populations across countries. It is influenced by a multitude of factors including healthcare quality, disease prevalence, nutrition, education, and economic status. Understanding these influences can guide national and international organizations in crafting more effective health policies. In this project, we leverage the WHO life expectancy dataset to conduct in-depth exploratory and inferential analysis, culminating in the creation of predictive models.
+
+\section{Data Description and Preprocessing}
+The dataset comprises records from 193 countries between 2000 and 2015. It includes 22 variables capturing economic indicators, healthcare statistics, immunization rates, and demographic data.
+
+\subsection{Missing Values}
+A key step in preprocessing was addressing missing data:
+\begin{itemize}
+    \item Median imputation was chosen for numerical variables to mitigate the impact of outliers.
+    \item The \texttt{Status} column was label encoded: "Developed" = 1, "Developing" = 0.
+    \item Rows with more than 30\% missing values were dropped.
+\end{itemize}
+
+\subsection{Feature Engineering and Scaling}
+To improve model robustness:
+\begin{itemize}
+    \item Z-score normalization was applied to all numerical features.
+    \item Year was treated as a categorical feature when necessary.
+    \item Some health indicators were grouped into broader categories for hypothesis testing.
+\end{itemize}
+
+\section{Exploratory Data Analysis (EDA)}
+Exploratory data analysis reveals trends, distributions, and anomalies within the dataset.
+
+\subsection{Boxplot Distribution of Features}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{output.png}
+    \caption{Boxplot distribution of standardized features}
+\end{figure}
+The wide spread in \texttt{BMI}, \texttt{Alcohol}, and \texttt{Measles} shows high variability across countries, reflecting differing health priorities.
+
+\subsection{Distribution of Standardized Variables}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{output2.png}
+    \caption{Distribution of variables (standardized)}
+\end{figure}
+Most features exhibit unimodal patterns; however, \texttt{GDP} and \texttt{Population} are right-skewed due to a few countries with extremely high values.
+
+\subsection{Life Expectancy by Country Status}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{output3.png}
+    \caption{Life Expectancy by Country Status}
+\end{figure}
+Developed countries enjoy higher life expectancy, as expected. The interquartile range is tighter, indicating more uniform health conditions.
+
+\section{Statistical Hypothesis Testing}
+We tested five hypotheses related to key indicators.
+
+\subsection{Hepatitis B Vaccination by Country Status}
+\textbf{H0:} There is no difference in vaccination rates. \\
+\textbf{H1:} Developed countries have higher coverage. \\
+\textit{Result:} Significant at $p < 0.05$, suggesting socioeconomic disparity.
+
+\subsection{Life Expectancy by Country Status}
+\textbf{H0:} Mean life expectancy is equal. \\
+\textbf{H1:} Developed countries have higher expectancy. \\
+\textit{Result:} Strong evidence ($p < 0.01$) supports H1.
+
+\subsection{Life Expectancy by Year (ANOVA)}
+\textbf{H0:} No variation across years. \\
+\textbf{H1:} At least one year differs. \\
+\textit{Result:} $p < 0.05$; improvements over time are statistically significant.
+
+\subsection{BMI vs Life Expectancy (Correlation)}
+\textbf{H0:} No association. \\
+\textbf{H1:} Positive correlation exists. \\
+\textit{Result:} $r = 0.3$ indicates moderate correlation.
+
+\subsection{Schooling vs Life Expectancy}
+\textbf{H0:} No association. \\
+\textbf{H1:} Higher education increases longevity. \\
+\textit{Result:} Strong correlation $r > 0.6$ confirms importance of education.
+
+\section{Correlation Analysis}
+To rank features, we computed Pearson's correlation with the target variable:
+\begin{itemize}
+    \item \textbf{Highly Positive:} \texttt{Schooling}, \texttt{Income composition}, \texttt{BMI}, \texttt{Diphtheria}
+    \item \textbf{Highly Negative:} \texttt{HIV/AIDS}, \texttt{Adult Mortality}, \texttt{Thinness 5-9 years}
+\end{itemize}
+These insights informed our feature selection in regression modeling.
+
+\section{Regression Modeling}
+
+\subsection{Train-Test Split by Country}
+We avoided data leakage by ensuring countries in training did not appear in testing.
+
+\subsubsection*{With Country Feature}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{output4.png}
+    \caption{Predicted vs Actual Life Expectancy (With Country Column)}
+\end{figure}
+The model fits training data well but lacks generalizability, indicating overfitting.
+
+\subsubsection*{Without Country Feature}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{output5.png}
+    \caption{Predicted vs Actual Life Expectancy (Without Country Column)}
+\end{figure}
+Performance slightly declines, but generalization improves. This model is better suited for new, unseen countries.
+
+\subsection{Random vs Country-Based Splitting}
+A random split may give overly optimistic performance due to repeated entities. Country-based splitting reflects real-world generalization challenges.
+
+\subsection{Regularized vs Plain Regression}
+Lasso regression enhances interpretability:
+\begin{itemize}
+    \item Drops irrelevant variables.
+    \item Retains features aligned with correlation results (e.g., \texttt{Schooling}, \texttt{Income composition}).
+\end{itemize}
+This technique avoids multicollinearity and model overfitting.
+
+\section{Discussion}
+Our results confirm the value of statistical and machine learning methods in public health research. The statistical tests supported widely held beliefs about inequality in health outcomes. Regression modeling highlighted features with high predictive power, confirming the role of education, income, and preventive healthcare.
+
+Including the \texttt{Country} feature yielded more accurate training predictions but led to overfitting. A robust model must prioritize generalization — particularly when predicting for countries with no historical data.
+
+\section{Conclusion}
+This analysis shows that life expectancy is multifactorial and impacted by healthcare infrastructure, education, and social determinants. Country-specific information should be cautiously used in modeling to avoid overfitting. Lasso regression not only maintains predictive performance but also simplifies model interpretation. Future work can explore ensemble models and time-series forecasting of national health metrics.
+
+\section*{References}
+\begin{itemize}
+    \item \url{https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who}
+    \item \url{https://scikit-learn.org}
+    \item \url{https://www.data-to-viz.com}
+    \item WHO Global Health Observatory Data Repository
+    \item James, G., Witten, D., Hastie, T., Tibshirani, R. (2021). An Introduction to Statistical Learning. Springer.
+\end{itemize}
+
+\end{document}
