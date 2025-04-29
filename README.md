@@ -1,7 +1,7 @@
 
 # Life Expectancy Analysis Using Regression and Statistical Testing
 
-**Machine Learning Assignment 1 – Part 2**
+**Machine Learning **
 
 ---
 
