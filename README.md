@@ -9,7 +9,7 @@
 This study analyzes life expectancy data provided by the World Health Organization (WHO) to understand the impact of socioeconomic and health indicators on life expectancy. We perform data preprocessing, statistical hypothesis testing, correlation analysis, and regression modeling to explore insights into country-level life expectancy outcomes. The analysis includes both models with and without country-specific information. The study concludes with insights into predictive modeling strategies for public health forecasting and discusses implications for global health policy.
 
 ## Introduction
-Life expectancy is a fundamental metric used to measure the health and well-being of populations across countries. It is influenced by a multitude of factors including healthcare quality, disease prevalence, nutrition, education, and economic status. Understanding these influences can guide national and international organizations in crafting more effective health policies. In this project, we leverage the WHO life expectancy dataset to conduct in-depth exploratory and inferential analysis, culminating in the creation of predictive models.
+Life expectancy is a fundamental metric used to measure the health and well-being of populations across countries. It is influenced by a multitude of factors including healthcare quality, disease prevalence, nutrition, education, and economic status. Understanding these influences can guide national and international organizations in crafting more effective health policies. In this project, I leverage the WHO life expectancy dataset to conduct in-depth exploratory and inferential analysis, culminating in the creation of predictive models.
 
 ## Data Description and Preprocessing
 The dataset comprises records from 193 countries between 2000 and 2015. It includes 22 variables capturing economic indicators, healthcare statistics, immunization rates, and demographic data.
@@ -74,7 +74,7 @@ _Result:_ r = 0.3 indicates moderate correlation.
 _Result:_ Strong correlation r > 0.6 confirms importance of education.
 
 ## Correlation Analysis
-We computed Pearson's correlation coefficients:
+I computed Pearson's correlation coefficients:
 
 - **Highly Positive:** `Schooling`, `Income composition`, `BMI`, `Diphtheria`
 - **Highly Negative:** `HIV/AIDS`, `Adult Mortality`, `Thinness 5-9 years`
@@ -84,7 +84,7 @@ These insights informed our feature selection in regression modeling.
 ## Regression Modeling
 
 ### Train-Test Split by Country
-We avoided data leakage by ensuring countries in training did not appear in testing.
+I avoided data leakage by ensuring countries in training did not appear in testing.
 
 #### With Country Feature
 ![Predicted vs Actual Life Expectancy (With Country Column)](output4.png)
